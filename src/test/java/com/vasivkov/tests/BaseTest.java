@@ -15,11 +15,11 @@ public class BaseTest {
     @Parameters ("browser")
     public WebDriver getDriver(String browser){
         if (browser.equalsIgnoreCase("firefox")){
-            System.setProperty("webdriver.gecko.driver", "/home/vasya/IdeaProjects/yamarket-tech-test/src/main/resources/drivers/LinuxGeckodriver");
+            System.setProperty("webdriver.gecko.driver", "src/main/resources/drivers/LinuxGeckodriver");
             driver = new FirefoxDriver();
         }
         else if(browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/home/vasya/IdeaProjects/yamarket-tech-test/src/main/resources/drivers/LinuxChromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/LinuxChromedriver");
             driver = new ChromeDriver();
         }
         driver.manage().window().maximize();
