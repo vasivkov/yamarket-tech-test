@@ -1,11 +1,10 @@
 package com.vasivkov.tests;
 
+import com.vasivkov.Utils.PropertiesFileReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
-
-import java.sql.SQLOutput;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -23,7 +22,7 @@ public class BaseTest {
             driver = new ChromeDriver();
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt(PropertiesFileReader.getTestProperty("implicitlyWait")), TimeUnit.SECONDS);
         return driver;
     }
 
